@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Desafio1_LoginPage</string>
     <string name="forgot_password">Esqueceu a senha?</string>
+    <string name="sign_in">Login</string>
+    <string name="password">Senha</string>
+    <string name="email_or_username">E-mail ou usuário</string>
+    <string name="super_app">Super Mario App!</string>
 </resources>

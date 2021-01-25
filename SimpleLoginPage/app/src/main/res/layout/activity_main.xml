@@ -8,11 +8,87 @@
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:src="@drawable/backgroundwallpaper"
+        android:src="@drawable/mario"
         android:scaleType="centerCrop"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </androidx.appcompat.widget.AppCompatImageView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_layer_gradient" />
+
+    <!--<androidx.appcompat.widget.AppCompatImageView
+        android:src="@drawable/backgroundwallpaper"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </androidx.appcompat.widget.AppCompatImageView>-->
+
+    <TextView
+        android:id="@+id/txt_slogan"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="18dp"
+        android:text="@string/super_app"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@id/edit_text_credentials"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_text_credentials"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="18dp"
+        android:hint="@string/email_or_username"
+        android:inputType="text"
+        android:imeOptions="actionDone"
+        android:textColor="@android:color/white"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:textColorHint="@android:color/white"
+        android:background="@drawable/bg_edittext_normal"
+        app:layout_constraintBottom_toTopOf="@+id/edit_text_password"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_text_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="24dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:imeOptions="actionDone"
+        android:textColor="@android:color/white"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:textColorHint="@android:color/white"
+        android:background="@drawable/bg_edittext_normal"
+        app:layout_constraintBottom_toTopOf="@+id/btn_sign_in"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_sign_in"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="36dp"
+        android:text="@string/sign_in"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:background="@drawable/bg_button_normal"
+        app:layout_constraintBottom_toTopOf="@id/txt_forgot_password"
+        />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txt_forgot_password"
@@ -24,6 +100,5 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
         app:layout_constraintBottom_toBottomOf="parent"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
