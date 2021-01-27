@@ -1,0 +1,15 @@
+1. Crie uma função para realizar cada uma das seguintes operações matemáticas:
+soma, subtração, divisão e multiplicação e retorne o resultado da respectiva operação.
+2. Peça para o usuário digitar um número e print na tela o número ao quadrado e sua raiz
+quadrada.
+3. Peça para o usuário digitar as 3 notas do semestre e calcule sua média (soma das notas
+dividido pela quantidade das notas). A nota digitada não pode ser menor do que zero ou maior
+que 10. Se a média for maior ou igual a 6 o aluno passou, do contrário está reprovado. Printe
+na tela a nota com apenas dois digitos apos a virgula e a situação do aluno.
+4. Faça uma função que recebe uma palavra digitada pelo usuario e printe na tela apenas as
+ultimas 3 letras da palavra. Exemplo: "cinco". Saída: "nco".
+5. Crie uma função que recebe uma string e a inverte. Ex: amor -> roma. Depois disso, retorne
+esta string com uma letra acima no alfabeto. Ex: roma -> spnb.
+Desafio:
+6. Calculadora automatizada: Peça para o usuário digitar um número, depois uma operação matemática
+(+,-,/,*), depois um segundo numero. Agora printe o resultado.
