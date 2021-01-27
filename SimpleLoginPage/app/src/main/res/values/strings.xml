@@ -5,4 +5,5 @@
     <string name="password">Senha</string>
     <string name="email_or_username">E-mail ou usuário</string>
     <string name="super_app">Super Mario App!</string>
+    <string name="google_api_key" translatable="false">AIzaSyCjMgf_wxKH2VE1bzYLRfYcMSU8j6C17wU</string>
 </resources>
