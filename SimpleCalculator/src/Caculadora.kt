@@ -22,6 +22,7 @@ Exercicio 6 (Desafio): Calculadora automatizada: Peça para o usuário digitar u
 
 /**
  * Funcao principal que pede a escolha do exercicio a ser validado
+ * https://github.com/diegowsu/kotlin/tree/master/SimpleCalculator
  */
 fun main(args:Array<String>) {
 
@@ -72,6 +73,7 @@ fun main(args:Array<String>) {
 
                 else -> {
                     println("Não entrou com nenhuma opção válida.")
+                    return
                 }
             }
         }
@@ -82,11 +84,13 @@ fun main(args:Array<String>) {
             if (number != null) {
                 numeroaoquadrado(number)
                 raizquadrada(number.toInt())
+            } else {
+                println("Valor nao pode ser nulo")
             }
         }
 
         "3" -> {
-                // todo -- passar check de validacao para func booeleano
+                // todo melhoria -- passar check de validacao para func booeleano
                 println("Entre com 3 notas do semestre")
                 val nota1 = readLine()
                 if (nota1 != null && nota1.toInt() > 0 && nota1.toInt() <= 10) {
@@ -97,16 +101,18 @@ fun main(args:Array<String>) {
                             val resultadoMedia = mediaritmetica(nota1.toInt(), nota2.toInt(), nota3.toInt())
                             println("Resultado é: $resultadoMedia")
                             when {
-                                resultadoMedia.toInt() <= 5 -> println("Você está reprovado.")
-                                resultadoMedia.toInt() >= 6 -> println("Você está aprovado.")
+                                resultadoMedia <= 5 -> println("Você está reprovado.")
+                                resultadoMedia >= 6 -> println("Você está aprovado.")
                             }
+                        } else {
+                            println("Nota com valor invalido.")
                         }
                     } else {
                         println("Nota com valor invalido.")
                     }
                 } else {
                     println("Nota com valor invalido.")
-                 }
+                }
         }
 
         "4" -> {
@@ -115,14 +121,20 @@ fun main(args:Array<String>) {
             if (palavra != null) {
                 println("Ultimas 3 letras da palavra digitada é: ")
                 println(palavra.takeLast(3))
+            } else {
+                println("Nao pode ser nulo")
             }
         }
 
         "5" -> {
             println("Entre com uma palavra:")
             val palavra = readLine()
-            println("Palavra original: " + palavra)
-            println("Palavra invertida : " + palavra?.let { invertePalavra(it) })
+            if (palavra != null) {
+                println("Palavra original: $palavra")
+                println("Palavra invertida : " + invertePalavra(palavra))
+            } else {
+                println("Nao pode ser nulo")
+            }
         }
 
         "6" -> {
@@ -155,10 +167,10 @@ fun invertePalavra(palavra: String) : String {
     }.toTypedArray()
     var stringInvertida = ""
     for (i in palavras.indices) {
-        val palavra = palavras[i]
+        val word = palavras[i]
         var palavraInvertida = ""
-        for (j in palavra.length - 1 downTo 0) {
-            palavraInvertida = palavraInvertida + palavra[j]
+        for (j in word.length - 1 downTo 0) {
+            palavraInvertida += word[j]
         }
         stringInvertida = "$stringInvertida$palavraInvertida "
     }
