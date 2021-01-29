@@ -26,70 +26,71 @@ Exercicio 6 (Desafio): Calculadora automatizada: Peça para o usuário digitar u
  */
 fun main(args:Array<String>) {
 
-    println("Escolha o exercicio [1],[2],[3],[4],[5],[6]")
+    loop@ while (true) {
+        println("Escolha o exercicio [1],[2],[3],[4],[5],[6]")
 
-    when (readLine()) {
-        "1" -> {
-            println("Entre com o primeiro valor:")
-            val a = readLine()?.toInt()
-            println("Entre com o segundo valor:")
-            val b = readLine()?.toInt()
+        when (readLine()) {
+            "1" -> {
+                println("Entre com o primeiro valor:")
+                val a = readLine()?.toInt()
+                println("Entre com o segundo valor:")
+                val b = readLine()?.toInt()
 
-            if (a == null || b == null) {
-                println("Entre com os dois valores")
-                return
-            }
-
-            leituraOperacao()
-
-            when (readLine()) {
-
-                "1" -> {
-                    val resultado = soma(a,b)
-                    println("Valor de $a + $b = $resultado")
-                }
-
-                "2" -> {
-                    if (b < a)
-                        println("valor de b não pode ser menor que valor de a")
-                    else {
-                        val resultado = subtracao(a,b)
-                        println("Valor de $a - $b = $resultado")
-                    }
-                }
-
-                "3" -> {
-
-                    val resultado = multiplicao(a,b)
-                    println("Valor de $a * $b = $resultado")
-                }
-
-                "4" -> {
-                    if (b == 0 || b < a) {
-                        val resultado = divisao(a,b)
-                        println("Valor de $a / $b = $resultado")
-                    }
-                }
-
-                else -> {
-                    println("Não entrou com nenhuma opção válida.")
+                if (a == null || b == null) {
+                    println("Entre com os dois valores")
                     return
                 }
-            }
-        }
 
-        "2" -> {
-            println("Entre com um numero")
-            val number = readLine()
-            if (number != null) {
-                numeroaoquadrado(number)
-                raizquadrada(number.toInt())
-            } else {
-                println("Valor nao pode ser nulo")
-            }
-        }
+                leituraOperacao()
 
-        "3" -> {
+                when (readLine()) {
+
+                    "1" -> {
+                        val resultado = soma(a, b)
+                        println("Valor de $a + $b = $resultado")
+                    }
+
+                    "2" -> {
+                        if (b < a)
+                            println("valor de b não pode ser menor que valor de a")
+                        else {
+                            val resultado = subtracao(a, b)
+                            println("Valor de $a - $b = $resultado")
+                        }
+                    }
+
+                    "3" -> {
+
+                        val resultado = multiplicao(a, b)
+                        println("Valor de $a * $b = $resultado")
+                    }
+
+                    "4" -> {
+                        if (b == 0 || b < a) {
+                            val resultado = divisao(a, b)
+                            println("Valor de $a / $b = $resultado")
+                        }
+                    }
+
+                    else -> {
+                        println("Não entrou com nenhuma opção válida.")
+                        return
+                    }
+                }
+            }
+
+            "2" -> {
+                println("Entre com um numero")
+                val number = readLine()
+                if (number != null) {
+                    numeroaoquadrado(number)
+                    raizquadrada(number.toInt())
+                } else {
+                    println("Valor nao pode ser nulo")
+                }
+            }
+
+            "3" -> {
                 // todo melhoria -- passar check de validacao para func booeleano
                 println("Entre com 3 notas do semestre")
                 val nota1 = readLine()
@@ -113,44 +114,46 @@ fun main(args:Array<String>) {
                 } else {
                     println("Nota com valor invalido.")
                 }
-        }
-
-        "4" -> {
-            println("Entre com uma palavra:")
-            val palavra = readLine()
-            if (palavra != null) {
-                println("Ultimas 3 letras da palavra digitada é: ")
-                println(palavra.takeLast(3))
-            } else {
-                println("Nao pode ser nulo")
             }
-        }
 
-        "5" -> {
-            println("Entre com uma palavra:")
-            val palavra = readLine()
-            if (palavra != null) {
-                println("Palavra original: $palavra")
-                println("Palavra invertida : " + invertePalavra(palavra))
-            } else {
-                println("Nao pode ser nulo")
+            "4" -> {
+                println("Entre com uma palavra:")
+                val palavra = readLine()
+                if (palavra != null) {
+                    println("Ultimas 3 letras da palavra digitada é: ")
+                    println(palavra.takeLast(3))
+                } else {
+                    println("Nao pode ser nulo")
+                }
             }
-        }
 
-        "6" -> {
-            println("Digite um numero:")
-            val a = readLine()
-            val op = leituraOperacao()
-            println("Digite um segundo numero:")
-            val b = readLine()
-            if(a != null && b != null) {
-                if (op.equals("1")) soma(a.toInt(), b.toInt())
-                if (op.equals("2")) subtracao(a.toInt(), b.toInt())
-                if (op.equals("3")) multiplicao(a.toInt(), b.toInt())
-                if (op.equals("4")) divisao(a.toInt(), b.toInt())
-            } else {
-                println("Valor nao pode ser nulo")
+            "5" -> {
+                println("Entre com uma palavra:")
+                val palavra = readLine()
+                if (palavra != null) {
+                    println("Palavra original: $palavra")
+                    println("Palavra invertida : " + invertePalavra(palavra))
+                } else {
+                    println("Nao pode ser nulo")
+                }
             }
+
+            "6" -> {
+                println("Digite um numero:")
+                val a = readLine()
+                val op = leituraOperacao()
+                println("Digite um segundo numero:")
+                val b = readLine()
+                if (a != null && b != null) {
+                    if (op.equals("1")) soma(a.toInt(), b.toInt())
+                    if (op.equals("2")) subtracao(a.toInt(), b.toInt())
+                    if (op.equals("3")) multiplicao(a.toInt(), b.toInt())
+                    if (op.equals("4")) divisao(a.toInt(), b.toInt())
+                } else {
+                    println("Valor nao pode ser nulo")
+                }
+            }
+            else -> break@loop
         }
     }
 }
