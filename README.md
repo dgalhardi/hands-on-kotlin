@@ -1,1 +1,1 @@
-# Some apps writen in Java / Kotlin.
+# Some apps writen in Java an Kotlin.
